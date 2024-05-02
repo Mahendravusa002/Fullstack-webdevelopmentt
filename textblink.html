@@ -1,0 +1,17 @@
+<html>
+	<head>
+		<title> Text blinking using node js</title>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js">
+		</script>
+	</head>
+	<body>
+		<div id="text" >This text blink</div>
+		<script>
+			$(document).ready(function(){
+				setInterval(function(){
+					$('#text').fadeToggle(200);},
+					900);
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+type these cmds in terminal 
+
+sudo su
+  enter password
+  
+chmod u+x xampp-linux-x64-8.2.12-0-installer.run 
+./xampp-linux-x64-8.2.12-0-installer.run 
+
+cd opt/lampp
+
+
+./manager-linux-x64.run 
+
+cd /opt/lampp/htdocs/
+
+create any html or php file by using  below cmd.
+
+gedit filename.extension
+
+--enter content save and close
+
+open firefox
+type localhost/filename.extension    		-----ex:localhost/first.php
