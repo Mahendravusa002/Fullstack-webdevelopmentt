@@ -1,0 +1,453 @@
+#TEXT_BLINK:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TEXT</title>
+		<script src ="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+	</head>
+	<body>
+		<div id="tb"> This Text Blinks</div>
+		<script>
+			$(document).ready(function()
+			{
+				setInterval(function(){
+					$("#tb").fadeToggle(50);
+				},900);
+			});
+		</script>
+	</body>	
+</html>
+
+#TOGGLE BACKGROUND:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Color</title>
+		<style>
+			div
+			{
+				background:blue;
+				height:100px;
+				width:100px;
+			}
+			div.contextmenu
+			{
+				background:yellow;
+				height:100px;
+				width:100px;
+			}
+		</style>
+		<script src ="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+	</head>
+	<boby>
+		<div></div>
+		<span>right click</span>
+		<script>
+			var div=$("div").first();
+			div.on("contextmenu",function()
+			{
+				div.toggleClass("contextmenu");
+			})
+		</script>
+	</boby>
+</html>
+
+
+#ANGULAR VALIDATION:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ANGULAR VALIDATION</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	</head>
+	<body>
+		
+		<h2>VALIDATION FAORM</h2>
+		<form name="myform" ng-app="myapp" ng-controller="validateCtrl" novalidate>
+			<p>UserName:
+			<input type="text" name="user" ng-model="user" required>
+			<span style="color:red" ng-show="myform.user.$dirty&&myform.user.$invalid">
+			<span ng-show="myform.user.$error.required">User name required</span></span>
+			</p>
+			<p>Email:
+			<input type="email" name="email"ng-model="email" required>	
+			<span style="color:red" ng-show="myform.email.$dirty $$myform.email.$invalid">
+			<span ng-show="myform.email.$error.required"> Email Required</span>
+			<span ng-show="myform.email.$error.email">Invalid</span>
+			</span>	
+			</p>
+			<p>
+			</p>
+			<input type="submit" ng-disabled="myform.user.$dirty&&myform.user.$invalid||myform.email.$dirty&&myform.email.$invalid">
+			<script>
+				var app= angular.module("myapp",[]);
+				app.controller("validateCtrl",function($scope)
+				{
+					$scope.user="mahendra";
+					$scope.email='mahendravusa2000@gmail.com';
+				});
+			</script>
+		</form>
+		
+	</body>
+</html>
+
+
+#TEXTGROW&SHRINK:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>textgro</title>
+	</head>
+	<body>
+		<p id="1">TEXT_GROWING</p>
+		<script>
+			const ele= document .getElementById("1");
+			let f=5;
+			let size=18; 
+			ele.style.color="red";
+			setInterval(()=>{
+				size+=f;
+				ele.style.fontSize=size+"pt";
+				if(size>=50)
+				{
+					f=-1*f;
+					ele.innerHtml="TEXT_SHRINKING";
+					ele.style.color="blue";
+				}
+				if (size<5)
+				{
+					f=-1*f;
+					ele.innerHtml="TEXT_GROWING";
+					ele.style.color="red"
+				}
+				
+				},100);
+		</script>
+	</body>
+</html>
+
+#TICKET RISEVATION
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ticket</title>
+		<style>
+			tr{
+				height:50px;
+		}
+		td{
+			height:50px;
+		}
+		</style>
+	</head>
+	<body>
+		<center>
+		<form>
+			<table>
+			<tr><td><H2>TICKET RESERVATION</H2></td></tr>
+			<tr><td><input type="radio" name="kk" id="kk" >
+			<label>oneway</label>
+			<input type="radio" name="kk" id="dd">
+			<label>Twoway</label></td></tr>
+			<tr><td><input type= "text" placeholder="From">
+			<input type="text" placeholder="To" ></td></tr>
+			<tr><td><label >DEparture:</label>
+			<input type="date">
+			<label>return </label>
+			<input type="date"></td></tr>
+			<tr><td><input type="number" placeholder="ADults">
+						<input type="number" placeholder="childs"></</td></tr>
+			
+			<tr><td><label>Travel class:</label>
+			
+			<select>
+				<option></option>
+				<option>1-AC</option>
+				<option>2-AC</option>
+				<option>3-AC</option>
+				<option>Sleeper</option>
+				<option>GEN</option>
+			</select></td></tr>
+			<tr><td colspan="2">
+				<input type ="Submit" value="AVILABILITY">
+				<input type ="Submit" value="REFRESH">
+			</td></tr>
+			</table>
+		</form>
+		
+		</center>
+	</body>
+</html>
+
+#JAVA SCRIPT CALUCATOR:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>js calculator</title>
+	</head>
+	<body>
+		<script>
+			function insert(num)
+			{
+				document.form.text.value=document.form.text.value+num;
+				
+			}
+			function equal(){
+				var exp=document.form.text.value;
+				if (exp)
+				{
+					document.form.text.value=eval(exp);
+				}
+			}
+			function c()
+			{
+				document.form.text.value=' ';
+			}
+				
+		</script>
+		<center>
+			<H1>JS CALCULATOR</H1>
+			<form name="form">
+			<input type="textbox" name="text"><br><br>
+			
+			<input type="button"  value="1" onclick="insert(1)">
+			<input type="button"  value="2" onclick="insert(2)">
+			<input type="button"  value="3" onclick="insert(3)">
+			<input type="button"  value="+" onclick="insert('+')">
+			<br><br>
+			
+			<input type="button"  value="4" onclick="insert(4)">
+			<input type="button"  value="5" onclick="insert(5)">
+			<input type="button"  value="6" onclick="insert(6)">
+			<input type="button"  value="-" onclick="insert('-')">
+			<br><br>
+			
+			<input type="button"  value="7" onclick="insert(7)">
+			<input type="button"  value="8" onclick="insert(8)">
+			<input type="button"  value="9" onclick="insert(9)">
+			<input type="button"  value="*" onclick="insert('*')">
+			<br><br>
+			
+			<input type="button"  value="/" onclick="insert('/')">
+			<input type="button"  value="0" onclick="insert(0)">
+			<input type="button"  value="=" onclick="equal()">
+			<input type="button"  value="c" onclick="c()">
+			<br><br>
+			</form>
+		</center>
+	</body>
+</html>
+
+#VALIDATION FORM:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form</title>
+	<script src="validation.js"></script>
+</head>
+<body>
+	<h1 align="center">Registration Form</h1>
+	<table align="center">
+		<form name="registration" onSubmit="return validate()">
+			<tr>
+				<td><label for="fn">First Name : </label></td>
+				<td><input type="text" id="fn" name="fname"></td>
+			</tr>
+			<tr>
+				<td><label for="ln">Last Name : </label></td>
+				<td><input type="text" id="ln" name="lname"></td>
+			</tr>
+			<tr>
+				<td><label for="dob">DOB : </label></td>
+				<td><input type="date" id="dob" name="dob"></td>
+			</tr>
+			<tr>
+				<td><label for="branch">Name of Branch : </label></td>
+				<td>
+					<select id="branch" name="op">
+						<option>Select your Branch</option>
+						<option value="cse">CSE</option>
+						<option value="csd">CSD</option>
+						<option value="cai">CAI</option>
+						<option value="csc">CSC</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td><label>Gender : </label></td>
+				<td>
+					<input type="radio" name="gender" value="male">
+					<label for="male">Male</label>
+
+					<input type="radio" name="gender" value="female">
+					<label for="female">Female</label>	
+				</td>
+			</tr>
+			<tr>
+				<td>Programming Languages : </td>
+				<td>
+					<input type="checkbox" name="c" id="c" value="c">
+					<label for="c">C</label>
+				
+					<input type="checkbox" name="cplus" id="cplus" value="cplus">
+					<label for="cplus">C++</label>
+
+					<input type="checkbox" name="j" id="j" value="Java">
+					<label for="j">Java</label>
+
+					<input type="checkbox" name="p" id="p" value="p">
+					<label for="p">Python</label>
+				</td>
+			</tr>
+			<tr>
+				<td>Address : </td>
+				<td><textarea rows="5" name="add"></textarea></td>
+			</tr>
+			<tr>
+				<td><label for="e">Email</label></td>
+				<td><input type="emal" id="e" name="e"></td>
+			</tr>
+			<tr>
+				<td><label for="pass">Password</label></td>
+				<td><input type="password" id="pass" name="pass"></td>
+			</tr>
+            <tr>
+                <td><label for="pno">Phone Number : </label></td>
+                <td><input type="number" id="pno" name="pno"></td>
+            </tr>
+			<tr>
+				<td><label for="resume">Resume : </label></td>
+				<td><input type="file" id="resume" name="resume"></td>
+			</tr>
+			<tr>
+				<td><input type="submit" name="Submit"></td>
+				<td><input type="reset" name="Reset"></td>
+			</tr>
+		</form>
+	</table>
+</body>
+</html>
+
+#js file for VALIDATION FORM:
+
+function validate()
+			{
+			var fname=document.registration.fname;
+			var lname=document.registration.lname;
+			var gender=document.registration.gender;
+			var branch=document.registration.op;
+			var add=document.registration.add;
+			var c=document.registration.c;
+			var p=document.registration.p;
+			var j=document.registration.j;
+            var add=document.registration.add;
+			var cplus=document.registration.cplus;
+			var date=document.registration.dob;
+			var pno=document.registration.pno;
+            var email=document.registration.e;
+            var pass=document.registration.pass;
+            var resume=document.registration.resume;
+            
+			if(!fname.value.match("[a-zA-Z]{5,50}"))
+			{
+				alert("First Name Size can only be between 5 to 50 words");
+				return false;
+			}
+			else if(!lname.value.match("[a-zA-Z]{5,50}"))
+			{
+					alert("Last Name Size can only be between 5 to 50 words");
+					return false;
+			}
+			else if(!date.value)
+			{
+				alert("Select your Date of Birth from Calendar");
+				return false;
+			}
+			else if(gender.value!="male" && gender.value!="female")
+			{
+				alert("Please Select your Gender");
+				return false;
+			}
+			else if(!(c.checked || p.checked || cplus.checked || j.checked))
+			{
+				alert("Choose any one Programming Language");
+				return false;
+			}
+            else if(!add.value.match("[a-zA-Z0-9\/\-]{6,}"))
+            {
+                 alert("Enter Correct Address");
+                 return false;
+            }
+			else if(branch.value!="cse" && branch.value!="csd" && branch.value!="cai" && branch.value!="csc")
+			{
+				alert("Choose your Branch");
+				return false;
+			}
+            else if(!email.value.match("[a-zA-Z0-9_\.\-]+[@][a-z]+[\.][a-z]{2,3}"))
+            {
+                  alert("Specify the Correct Email Address");
+                  return false;
+            }
+            else if(!pass.value.match("[a-zA-Z0-9]{7,}"))
+            {
+                alert("Enter Strong Password of atleast 7 characters ")
+                return false;
+            }
+            else if(!pno.value.match("[6-9][0-9]{9}"))
+            {
+                alert("Specify Correct Phone Number");
+                return false;
+            }
+            else if(!resume.value)
+            {
+                alert("Provide your Resume");
+                return false;
+            }
+			else
+			{
+				alert("You have Successfully Submitted the Form");
+                return true;
+            }
+            
+}
+
+#PHP_SESSION_COUNT:
+
+<?php
+session_start();
+
+if(isset($_SESSION['views']))
+
+    $_SESSION['views'] = $_SESSION['views']+1;
+else
+    $_SESSION['views']=1;
+    echo"views = ".$_SESSION['views'];
+?>
+
+
+#NODE JS FILES -->READ,WRITE,DELETE:
+WRITE:
+const fs=require('fs');
+content="This is new line";
+fs.writeFileSync("notes.txt",content);
+console.log("File Written Successfully");
+
+READ:
+
+const fs=require('fs');
+const url=require('url');
+buf_data=fs.readFileSync("notes.txt");
+console.log(buf_data.toString());
+
+DELETE:
+const fs=require('fs');
+fs.unlink("notes.txt",(err)=>{console.log(err);});
+console.log("File Delted Successfully");
